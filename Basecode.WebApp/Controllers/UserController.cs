@@ -5,7 +5,6 @@ using Basecode.Services.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using NLog;
-using System.Text;
 
 namespace Basecode.WebApp.Controllers
 {
@@ -15,7 +14,7 @@ namespace Basecode.WebApp.Controllers
         private static readonly Logger _logger = LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="UserController"/> class.
+        /// Initializes a new instance of the <see cref="UserController" /> class.
         /// </summary>
         /// <param name="service">The User service.</param>
         public UserController(IUserService service)
@@ -26,7 +25,9 @@ namespace Basecode.WebApp.Controllers
         /// <summary>
         /// Displays the list of all users.
         /// </summary>
-        /// <returns>A view containing all users as a list of UserViewModel objects.</returns>
+        /// <returns>
+        /// A view containing all users as a list of UserViewModel objects.
+        /// </returns>
         public IActionResult Index()
         {
             try
@@ -52,7 +53,9 @@ namespace Basecode.WebApp.Controllers
         /// <summary>
         /// Displays the modal for adding a new user.
         /// </summary>
-        /// <returns>A partial view with a User model.</returns>
+        /// <returns>
+        /// A partial view with a User model.
+        /// </returns>
         [HttpGet]
         public ActionResult AddView()
         {
@@ -72,7 +75,9 @@ namespace Basecode.WebApp.Controllers
         /// Adds a new user to the system.
         /// </summary>
         /// <param name="user">User object representing the user to be added.</param>
-        /// <returns>Redirect to the Index() action to display the list of users.</returns>
+        /// <returns>
+        /// Redirect to the Index() action to display the list of users.
+        /// </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(User user)
@@ -113,7 +118,9 @@ namespace Basecode.WebApp.Controllers
         /// Displays the modal for updating an existing user.
         /// </summary>
         /// <param name="id">Integer representing the ID of the user to be updated.</param>
-        /// <returns>A partial view and User object.</returns>
+        /// <returns>
+        /// A partial view and User object.
+        /// </returns>
         [HttpGet]
         public ActionResult UpdateView(int id)
         {
@@ -141,7 +148,9 @@ namespace Basecode.WebApp.Controllers
         /// Updates an existing user in the system.
         /// </summary>
         /// <param name="user">User object representing the user with updated information.</param>
-        /// <returns>Redirect to the Index() action to display the list of users.</returns>
+        /// <returns>
+        /// Redirect to the Index() action to display the list of users.
+        /// </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Update(User user)
@@ -182,7 +191,9 @@ namespace Basecode.WebApp.Controllers
         /// Displays the modal for deleting an existing user.
         /// </summary>
         /// <param name="id">Integer representing the ID of the user to be deleted.</param>
-        /// <returns>A partial view and User object.</returns>
+        /// <returns>
+        /// A partial view and User object.
+        /// </returns>
         [HttpGet]
         public ActionResult DeleteView(int id)
         {
@@ -210,7 +221,9 @@ namespace Basecode.WebApp.Controllers
         /// Deletes a user from the system.
         /// </summary>
         /// <param name="id">Integer representing the ID of the user to be deleted.</param>
-        /// <returns>Redirect to the Index() action to display the updated list of users.</returns>
+        /// <returns>
+        /// Redirect to the Index() action to display the updated list of users.
+        /// </returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
